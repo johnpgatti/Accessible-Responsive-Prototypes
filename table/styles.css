@@ -4,9 +4,6 @@
 }
 
 /* Beginning of Responsive Accessible Table CSS logic */
-.wide-only {
-  display: none;
-}
 
 .mobile-table-row-substitute span:first-child, .wide-as-table-header, .header {
   font-weight: bold;
@@ -14,6 +11,10 @@
 }
 
 @media screen and (max-width: 40em) {
+  .wide-only {
+    display: none;
+  }
+  
   /* Mobile table substitute styles */
   .mobile-table-row-substitute span:after {
       content: "\00a0";
