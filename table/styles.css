@@ -10,13 +10,14 @@
   color: black;
 }
 
+.mobile-space-before-block {
+  _border-top: 30px solid green !important;
+  margin-top: 5em;
+}
+
 @media screen and (max-width: 40em) {
   .wide-only {
     display: none;
-  }
-
-  .mobile-space-before-block {
-    border-top: 10em solid green;
   }
 
   /* Mobile table substitute styles */
@@ -30,6 +31,7 @@
   .mobile-table-row-substitute:not(:last-child):after {
       content: "\00a0";
       display: block;
+      visibility: hidden;
       line-height: 1em;
       color: transparent;
   }
