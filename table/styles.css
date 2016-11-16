@@ -1,4 +1,12 @@
 
+.hide-rows tr {
+  visibility: hidden;
+}
+
+.hide-rows tr.show-row {
+  visibility: visible;
+}
+
 .bordered-cells td, .bordered-cells th {
   border: 1px solid #ccc;
 }
