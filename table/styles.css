@@ -14,10 +14,14 @@
   .wide-only {
     display: none;
   }
-  
+
+  .mobile-space-before-block {
+    border-top: 10em solid green;
+  }
+
   /* Mobile table substitute styles */
   .mobile-table-row-substitute span:after {
-      content: "\00a0";
+      content: "";
       display: block;
       line-height: 1px;
       color: transparent;
