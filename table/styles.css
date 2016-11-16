@@ -8,7 +8,7 @@
   display: none;
 }
 
-.mobile-table-row-substitute span:first-child, .wide-as-table-header {
+.mobile-table-row-substitute span:first-child, .wide-as-table-header, .header {
   font-weight: bold;
   color: black;
 }
@@ -51,7 +51,7 @@
     display: table-cell;
   }
 
-  .mobile-only {
+  .mobile-only, .wide-as-table-cell > td.mobile-only {
     display: none;
   }
 
