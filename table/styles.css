@@ -1,19 +1,6 @@
-/* Adaptor rules for bootstrap */
-.table-bordered > tbody > tr.wide-table-cell > td, .table-bordered > tbody > tr.wide-table-cell > th {
-  border-width: 0em;
-}
 
-.table-bordered > tbody > tr.wide-table-cell {
-  border: 1px solid #ddd;
-}
-
-table {
+.bordered-cells td, .bordered-cells th {
   border: 1px solid #ccc;
-  width: 100%;
-  margin:0;
-  padding:0;
-  border-collapse: collapse;
-  border-spacing: 0;
 }
 
 /* Beginning of Responsive Accessible Table CSS logic */
@@ -41,21 +28,19 @@ table {
       line-height: 1em;
       color: transparent;
   }
+
+  .mobile-space-before-block:before {
+    content: "\00a0";
+    display: block;
+    line-height: 1em;
+    color: transparent;
+  }
 }
 
 @media screen and (min-width: 40em) {
 
-  div.wide-as-table .wide-as-table-cell, div.wide-as-table .wide-as-table-header {
-    border: .0125em solid #ccc;
-    padding: .5em;
-  }
-
-  div.wide-as-table {
-    width: 100%;
-  }
-
-  .wide-as-table {
-    display: table;
+  .bordered-cells {
+    border: 1px solid #ccc;
   }
 
   .wide-as-table-row {
