@@ -31,7 +31,6 @@
   .mobile-table-row-substitute:not(:last-child):after {
       content: "\00a0";
       display: block;
-      visibility: hidden;
       line-height: 1em;
       color: transparent;
   }
@@ -41,6 +40,7 @@
     display: block;
     line-height: 1em;
     color: transparent;
+    visibility: hidden;
   }
 }
 
