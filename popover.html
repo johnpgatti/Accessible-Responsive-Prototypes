@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Popover 508</title>
+		<link rel="stylesheet" href="styles.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script>
+			function togglePopover(id) {
+				$(".popover-jquery-"+id).toggle();
+
+				var vis = $(".popover-jquery-"+id).is(":visible");
+
+				if (vis) {
+					setTimeout(function() {
+						$("#popover-header-"+id).focus(),
+						10
+					});
+					createTabLoop('.popover-jquery-'+id);
+				}
+
+				function createTabLoop(popoverid) {
+        // I assume keeping this bit in a function is a good thing for closure? I.e. keeping variables local.
+
+        // Also, I have checked, and if there is only one link (i.e. close), focus is just kept on that link until you press enter or esc.
+            var firstLink = $(popoverid+" a:first").get(0);
+            var lastLink = $(popoverid+" a:last").get(0);
+
+            $(firstLink).keydown(function(e) {
+                // if you shift-tab on first link, go to last
+                if(e.shiftKey && e.keyCode == 9) {
+                    e.preventDefault();
+                    $(lastLink).focus();
+                }
+            });
+            $(lastLink).keydown(function(e) {
+                // if you press tab without shift, loop to first link.
+                if (!e.shiftKey && e.keyCode == 9) {
+                    e.preventDefault();
+                    $(firstLink).focus();
+                }
+            });
+        }
+			}
+
+			$(document).ready(function(){
+				$(".popover-jquery-0").hide();
+				$(".popover-jquery-a-0").click(function() { togglePopover(0) });
+
+				$(".popover-jquery-1").hide();
+				$(".popover-jquery-a-1").click(function() { togglePopover(1) });
+
+			});
+
+			function closePopover(id) {
+				$(".popover-jquery-"+id).hide();
+				$(".popover-jquery-a-"+id).focus();
+			}
+		</script>
+	</head>
+
+	<body>
+		<h1>Jquery Popover with 508 Compliance</h1>
+		<div>
+			<p id="popover-paragraph-0">This is the <a href="javascript:void(0);" class="popover-jquery-a-0">Jquery Popover</a> with close button on the top right corner.</p>
+			<div class="popover-container-0 popover-jquery-0"  aria-labelledby="popover-header-0">
+				<div class="popover-content">
+					<div class="popover-0-close">
+						<a aria-label="dismiss popover" class="popover-0-close" href="javascript:closePopover(0);"><img class="close-button" src="close-button.png"/></a>
+					</div>
+					<p tabindex="0" id="popover-header-0" class="popover-header-0">Popover Header</p>
+					<p>This is content in the popover</p>
+					<p><a class="learn-more" href="http://www.google.com">Learn More</a></p>
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<p>This is the <a href="javascript:void(1);" class="popover-jquery-a-1">Jquery Popover</a> with close button on the bottom.</p>
+			<div class="popover-container-1 popover-jquery-1"  aria-labelledby="popover-header-1">
+				<p tabindex="0" id="popover-header-1">Popover Header</p>
+				<p>This is content in the popover</p>
+				<p><a class="learn-more" href="http://www.google.com">Learn More</a></p>
+				<p><button aria-label="dismiss popover" class="popover-1-close" onclick="javascript:closePopover(1);">dismiss</button></p>
+			</div>
+		</div>
+	</body>
+	<footer>
+		This is the footer
+	</footer>
+</html>
