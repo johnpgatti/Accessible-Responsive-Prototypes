@@ -17,7 +17,31 @@
 						$("#popover-header-"+id).focus(),
 						10
 					});
+					createTabLoop('.popover-jquery-'+id);
 				}
+
+				function createTabLoop(popoverid) {
+        // I assume keeping this bit in a function is a good thing for closure? I.e. keeping variables local.
+
+        // Also, I have checked, and if there is only one link (i.e. close), focus is just kept on that link until you press enter or esc.
+            var firstLink = $(popoverid+" a:first").get(0);
+            var lastLink = $(popoverid+" a:last").get(0);
+
+            $(firstLink).keydown(function(e) {
+                // if you shift-tab on first link, go to last
+                if(e.shiftKey && e.keyCode == 9) {
+                    e.preventDefault();
+                    $(lastLink).focus();
+                }
+            });
+            $(lastLink).keydown(function(e) {
+                // if you press tab without shift, loop to first link.
+                if (!e.shiftKey && e.keyCode == 9) {
+                    e.preventDefault();
+                    $(firstLink).focus();
+                }
+            });
+        }
 			}
 
 			$(document).ready(function(){
@@ -43,7 +67,7 @@
 			<div class="popover-container-0 popover-jquery-0"  aria-labelledby="popover-header-0">
 				<div class="popover-content">
 					<div class="popover-0-close">
-						<button aria-label="dismiss popover" class="popover-0-close" onclick="javascript:closePopover(0);window.location.href='#popover-paragraph-0'"><img class="close-button" src="close-button.png"/></button>
+						<a aria-label="dismiss popover" class="popover-0-close" href="javascript:closePopover(0);"><img class="close-button" src="close-button.png"/></a>
 					</div>
 					<p tabindex="0" id="popover-header-0" class="popover-header-0">Popover Header</p>
 					<p>This is content in the popover</p>
