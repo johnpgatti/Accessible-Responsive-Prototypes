@@ -1,0 +1,41 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Responsive Table CSS</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <style>
+  .close-x {
+    float: right;
+    margin-right: .25em;
+    font-weight: bold;
+  }
+  </style>
+  <script>
+  function closePopoverOne() {
+    $('#popover-1-link').click();
+    window.location.href='#popover-1-link';
+  }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <h1 tabindex="0">Popover Test</h1>
+
+    <br/>
+    <p>This is a test <a href="#popover-1-title" id="popover-1-link" data-title="Popover One" data-toggle="popover" data-placement="auto right" data-content="This is sample popover text." data-trigger="click"
+      data-template="<div class='popover'><a title='close' class='close-x' href='javascript:closePopoverOne();'>X</a><h3 id='popover-1-title' class='popover-title'></h3><p class='popover-content'></p></div>">link</a>.
+
+  </div>
+</body>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+</html>
