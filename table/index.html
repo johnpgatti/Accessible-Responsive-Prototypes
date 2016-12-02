@@ -9,12 +9,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <style>
 
-  .invisible {
-    visibility: hidden;
-  }
-
   .wide-only {
     display: none;
+  }
+
+  .invisible {
+    visibility: hidden;
   }
 
   table.table.no-table-row-border > tbody > tr > th,
@@ -23,7 +23,7 @@
   }
 
   table.border-row-groups > tbody {
-    outline: 1px solid #ccc;
+    border: 1px solid #ccc;
   }
 
   /*Media queries*/
@@ -58,7 +58,6 @@
       <tr><th>Amount Owed</th></tr>
       <tr><td headers="amount-owed-desktop">$644.57</td></tr>
     </tbody>
-    <tbody class="invisible"><tr><td>&nbsp;</td></tr></tbody>
     <tbody>
       <tr><th>Reason for Payment</th></tr>
       <tr><td headers="reason-for-payment-desktop" >Tax Return or Notice</td></tr>
