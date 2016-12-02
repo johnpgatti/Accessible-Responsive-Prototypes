@@ -9,14 +9,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <style>
 
-  .wide-only {
-    display: none;
-  }
-
-  .invisible {
-    visibility: hidden;
-  }
-
   table.table.no-table-row-border > tbody > tr > th,
   table.table.no-table-row-border > tbody > tr > td {
     border-top: 0px;
@@ -26,17 +18,6 @@
     border: 1px solid #ccc;
   }
 
-  /*Media queries*/
-  @media screen and (min-width: 40em) {
-    table.wide-only {
-      display: table;
-    }
-
-    .mobile-only {
-      display: none;
-    }
-  }
-
   </style>
 </head>
 
@@ -44,7 +25,7 @@
   <div class="container">
   <h1 tabindex="0">Accessible Responsive Table Test</h1>
 
-  <table class="table mobile-only no-table-row-border border-row-groups gap-between-row-groups">
+  <table class="table visible-sm visible-xs no-table-row-border border-row-groups">
     <caption>
       This is a table with a caption
     </caption>
@@ -70,7 +51,7 @@
     </tbody>
   </table>
 
-  <table class="table table-bordered bordered-cells wide-only">
+  <table class="table table-bordered hidden-sm hidden-xs">
     <caption>
       This is a table with a caption
     </caption>
