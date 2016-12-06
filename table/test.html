@@ -38,8 +38,9 @@
   <div class="container">
   <h1 tabindex="0">Accessible Responsive Table Test</h1>
 
+  <!--
   <table class="table bordered-cells visible-xs space-between-tbody">
-    <caption>This is our table. There are many like it but this one is ours.</caption>
+    <caption>This is our table.</caption>
     <tbody>
         <tr><th id="RfP-0">Reason for Payment</th><td header="RfP-0">Shared Responsibility Payment (select Installment Agreement)</td></tr>
         <tr><th id="PT-0">Payment Type</th><td header="PT-0">Health Care (Form 1040)</td></tr>
@@ -54,8 +55,8 @@
     </tbody>
   </table>
 
-  <!--
   <table tabindex="0" class="table bordered-cells visible-xs space-between-tbody">
+    <caption>This is our table.</caption>
     <tbody>
         <tr><td class="header">Reason for Payment</td><td>Shared Responsibility Payment (select Installment Agreement)</td></tr>
         <tr><td class="header">Payment Type</td><td>Health Care (Form 1040)</td></tr>
@@ -69,10 +70,26 @@
         <tr><td class="header">Amount Owed</td><td>$205.25</td></tr>
     </tbody>
   </table>
-  --->
+-->
+
+  <table tabindex="0" class="table bordered-cells visible-xs space-between-tbody">
+    <caption>This is our table.</caption>
+    <tbody>
+        <tr><th scope="row">Reason for Payment</th><td>Shared Responsibility Payment (select Installment Agreement)</td></tr>
+        <tr><th scope="row">Payment Type</th><td>Health Care (Form 1040)</td></tr>
+        <tr><th scope="row">Tax Year</th><td>2014</td></tr>
+        <tr><th scope="row">Amount Owed</th><td>$644.57</td></tr>
+    </tbody>
+    <tbody>
+        <tr><th scope="row">Reason for Payment</th><td>Tax Return or Notice</td></tr>
+        <tr><th scope="row">Payment Type</th><td>1040</td></tr>
+        <tr><th scope="row">Tax Year</th><td>2013</td></tr>
+        <tr><th scope="row">Amount Owed</th><td>$205.25</td></tr>
+    </tbody>
+  </table>
 
   <table class="table bordered-cells hidden-xs">
-    <caption>This is our table. There are many like it but this one is ours.</caption>
+    <caption>This is a table.</caption>
       <tr>
         <th id="Reason-for-Payment">Reason for Payment</th>
         <th id="Payment-Type">Payment Type</th>
